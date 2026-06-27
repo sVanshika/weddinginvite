@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --ivory: #f8f4ed;
+  --paper: #fffdf9;
+  --ink: #2c2926;
+  --charcoal: #4b4540;
+  --gold: #c9a96b;
+  --rose: #c8a5a5;
+  --sage: #7d8b75;
+  --olive: #6a7364;
+
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 10rem;
+  --space-4xl: 15rem;
+}
+
+@theme inline {
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-gold: var(--gold);
+  --color-rose: var(--rose);
+  --color-sage: var(--sage);
+  --color-olive: var(--olive);
+
+  --font-script: var(--font-script);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-ui: var(--font-ui);
+}
+
+html,
+body {
+  background: var(--ivory);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-body), Georgia, serif;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--gold) 40%, transparent);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
